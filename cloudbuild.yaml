@@ -1,10 +1,10 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '--tag', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA', '.']
+    args: ['build', '--tag', 'gcr.io/avian-pact-423923-v6/$_SERVICE_NAME:$COMMIT_SHA', '.']
   
   # Завантажте контейнерний образ до Container Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA']
+    args: ['push', 'gcr.io/avian-pact-423923-v6/$_SERVICE_NAME:$COMMIT_SHA']
   
   - name: "gcr.io/cloud-builders/gcloud"
     args:
