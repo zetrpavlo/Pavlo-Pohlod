@@ -2,7 +2,7 @@ steps:
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '--tag', 'gcr.io/avian-pact-423923-v6/$_SERVICE_NAME:$COMMIT_SHA', '.']
   
-  # Завантажте контейнерний образ до Container Registry
+
   - name: 'gcr.io/cloud-builders/docker'
     args: ['push', 'gcr.io/avian-pact-423923-v6/$_SERVICE_NAME:$COMMIT_SHA']
   
@@ -13,7 +13,7 @@ steps:
         "deploy",
         "$_SERVICE_NAME",
         "--image",
-        "gcr.io/$PROJECT_ID/$_SERVICE_NAME:$COMMIT_SHA",
+        "gcr.io/avian-pact-423923-v6/$_SERVICE_NAME:$COMMIT_SHA",
         "--region",
         "$_DEPLOY_REGION",
         "--platform",
